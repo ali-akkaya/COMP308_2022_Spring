@@ -12,8 +12,9 @@ while True:
     # 'accept()' method for serverSocket, which creates a new socket in the server, called 'connectionSocket',
     # dedicated to this particular client.
     sentence = connectionSocket.recv(1024).decode()
+    print(sentence)
     capitalizedSentence = sentence.upper()
     connectionSocket.send(capitalizedSentence.encode())
-    connectionSocket.close()  # After sending the modified sentence to the client, we close the connection socket.
+    #connectionSocket.close()  # After sending the modified sentence to the client, we close the connection socket.
     # But since 'serverSocket' remains open, another client can now knock on the door and send the server a sentence to
     # modify.

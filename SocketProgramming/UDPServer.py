@@ -14,6 +14,7 @@ while True:  # UDPServer waits for a packet to arrive.
     # the packet’s data is put into the variable message and the packet’s source address is put into the variable
     # clientAddress. The variable clientAddress contains both the client’s IP address and the client’s port number.
     # Here, UDPServer will make use of this address information, as it provides a return address
+    print(message.decode())
     modifiedMessage = message.decode().upper()
     serverSocket.sendto(modifiedMessage.encode(), clientAddress)  # This line attaches the client’s address (IP
     # address and port number) to the capital- ized message (after converting the string to bytes), and sends the
